@@ -22,7 +22,7 @@ p{
 }
 
 p:after{
-  animation:go-left 4s cubic-bezier(.74, .06, .4, .92) forwards;
+  animation:go-left 0.1s cubic-bezier(.74, .06, .4, .92) forwards;
 
 }
 a{
