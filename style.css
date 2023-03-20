@@ -12,7 +12,7 @@ p{
   font-weight:500;
   color:white;
   opacity: 0;
-  animation: appearimg 0.8s linear forwards;
+  animation: appearimg 0.1s linear forwards;
   animation-delay: 6.4s;
   width:100vw;
   margin:auto;
