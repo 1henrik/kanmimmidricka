@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Kan hon dricka?</title>
+      <link rel="stylesheet" href="style.css">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+      <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+      <script>
+      var d = new Date();
+    var year = d.getFullYear();
+    var week = getISOWeek(d);
+    var isEvenWeek = (week % 2 == 0);
+
+    function getISOWeek(d) {
+      // Copy date so don't modify original
+      d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+      // Set to nearest Thursday: current date + 4 - current day number
+      // Make Sunday's day number 7
+      d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+      // Get first day of year
+      var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+      // Calculate full weeks to nearest Thursday
+      var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+      // Return array of year and week number
+      return weekNo;
+    }
+
+    window.onload = function() {
+      var oddTextList = ["Jaa bror!!! fylla", "Svar:ja, klackarna i taket", "Öhh? Ja."];
+      var evenTextList = ["Nej Nej Nej, blir saftkalas", "Nää! Jobba, jobba", "Nej nej nej nej?"];
+      var randomText;
+
+      if (isEvenWeek) {
+        randomText = evenTextList[Math.floor(Math.random() * evenTextList.length)];
+        document.getElementById("content").innerHTML = "<p>" + randomText + "</p>";
+      } else {
+        randomText = oddTextList[Math.floor(Math.random() * oddTextList.length)];
+        document.getElementById("content").innerHTML = "<p>" + randomText + "</p>";
+      }
+    }
+  	</script>
+  </head>
+<body>
+  <div class="temp"></div>
+  <div class="first-block"></div>
+  <div class="second-block"></div>
+  <div class="loader">
+        <ul>
+              <li>B</li>
+              <li>Ä</li>
+              <li>R</li>
+              <li>S</li>
+              <li>?</li>
+
+        </ul>
+  </div>
+  <div class="third-block"></div>
+  <div class="container">
+
+ <div id="content"></div>
+ <div class="Mail">
+   	<p><a href="mailto:youremail@example.com">Maila... <img src="pek.png" alt="test" width="50" height="50"></a></p>
+ </div>
+
+    </div>
+</body>
+
+</html>
